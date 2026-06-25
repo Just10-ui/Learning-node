@@ -1,40 +1,39 @@
 /*
+//* EXERCISE 1
 const promise = new Promise((resolve) => {
     setTimeout(() => {
-        console.log('Hello Promise');
+        resolve('Hello Promise');
     }, 3000);
 });
-*/
 
-/*
-const promise = Promise.reject('Something went wrong');
+promise.then(console.log);
 
-promise.catch((error) => {
-    return setTimeout(() => {
-        console.log(error);
+//* EXERCISE 2
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject('Something went wrong');
     }, 1000);
 });
-*/
 
-/*
+promise.catch(console.error);
+
+//* EXERCISE 3
 function getNumber() {
-    return Promise.resolve(100);
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(100);
+        }, 3000)
+    });
 };
-getNumber().then((result) => {
-    return setTimeout(() => {
-        console.log(result);
-    }, 3000)
-});
-*/
+getNumber().then(console.log);
 
-/*
+//* EXERCISE 4
 Promise.resolve(10)
     .then(num => num * 2)
     .then(num => num * 3)
     .then(console.log);
-*/
 
-/*
+//* EXERCISE 5
 function doubleNumber(num) {
     return Promise.resolve(num * 2);
 };
@@ -42,11 +41,11 @@ function doubleNumber(num) {
 doubleNumber(5)
     .then(num => num * 2)
     .then(console.log);
-*/
 
-/*
+//* EXERCISE 6
 Promise.resolve(5)
     .then(num => num + 5)
     .then(num => num * 2)
     .then(console.log);
+//Output 20
 */
