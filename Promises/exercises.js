@@ -24,15 +24,15 @@ getNumber().then(console.log);
 
 /*
 Promise.resolve(10)
-                .then((num) => {
-                    return num * 2;
-                })
-                .then((num) => {
-                    return num * 3;
-                })
-                .then((result) => {
-                    return console.log(result);
-                });
+    .then((num) => {
+        return num * 2;
+    })
+    .then((num) => {
+        return num * 3;
+    })
+    .then((result) => {
+        return console.log(result);
+    });
 */
 
 /*
@@ -41,11 +41,15 @@ function doubleNumber(num) {
 };
 
 doubleNumber(5)
-            .then((num) => {
-                return num * 2;
-            })
-            .then((result) => {
-                return console.log(result);
-            });
+    .then((num) => {
+        return num * 2;
+    })
+    .then((result) => {
+        return console.log(result);
+    });
 */
 
+Promise.resolve(5)
+    .then(num => num + 5)
+    .then(num => num * 2)
+    .then(console.log);
