@@ -7,32 +7,31 @@ const promise = new Promise((resolve) => {
 */
 
 /*
-const promise = Promise.reject(setTimeout(() => {
-    console.log('Something went wrong');
-}, 1000));
-promise.catch(console.error);
+const promise = Promise.reject('Something went wrong');
+
+promise.catch((error) => {
+    return setTimeout(() => {
+        console.log(error);
+    }, 1000);
+});
 */
 
 /*
 function getNumber() {
-    return Promise.resolve(setTimeout(() => {
-        console.log(100);
-    }, 3000));
+    return Promise.resolve(100);
 };
-getNumber().then(console.log);
+getNumber().then((result) => {
+    return setTimeout(() => {
+        console.log(result);
+    }, 3000)
+});
 */
 
 /*
 Promise.resolve(10)
-    .then((num) => {
-        return num * 2;
-    })
-    .then((num) => {
-        return num * 3;
-    })
-    .then((result) => {
-        return console.log(result);
-    });
+    .then(num => num * 2)
+    .then(num => num * 3)
+    .then(console.log);
 */
 
 /*
@@ -41,15 +40,13 @@ function doubleNumber(num) {
 };
 
 doubleNumber(5)
-    .then((num) => {
-        return num * 2;
-    })
-    .then((result) => {
-        return console.log(result);
-    });
+    .then(num => num * 2)
+    .then(console.log);
 */
 
+/*
 Promise.resolve(5)
     .then(num => num + 5)
     .then(num => num * 2)
     .then(console.log);
+*/
