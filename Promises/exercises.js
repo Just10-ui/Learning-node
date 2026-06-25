@@ -34,3 +34,18 @@ Promise.resolve(10)
                     return console.log(result);
                 });
 */
+
+/*
+function doubleNumber(num) {
+    return Promise.resolve(num * 2);
+};
+
+doubleNumber(5)
+            .then((num) => {
+                return num * 2;
+            })
+            .then((result) => {
+                return console.log(result);
+            });
+*/
+
