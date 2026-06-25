@@ -22,3 +22,15 @@ function getNumber() {
 getNumber().then(console.log);
 */
 
+/*
+Promise.resolve(10)
+                .then((num) => {
+                    return num * 2;
+                })
+                .then((num) => {
+                    return num * 3;
+                })
+                .then((result) => {
+                    return console.log(result);
+                });
+*/
