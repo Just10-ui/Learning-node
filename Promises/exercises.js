@@ -96,3 +96,58 @@ getUser()
     .then(username => username.user)
     .then(console.log);
 */
+//* EXERCISE 11
+function getUser() {
+    const user = {
+        id: 1, 
+        user: 'Justin'
+    };
+
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(user);
+        }, 2000);
+    });
+};
+
+function getOrders(userId) {
+    const orders = ([
+                {
+                    orderId: "ORD001",
+                    userId: 1,
+                    product: "Laptop",
+                    quantity: 1
+                },
+                {
+                    orderId: "ORD002",
+                    userId: 2,
+                    product: "Mechanical Keyboard",
+                    quantity: 1
+                },
+                {
+                    orderId: "ORD003",
+                    userId: 3,
+                    product: "Mouse",
+                    quantity: 2
+                }
+            ]);
+
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(orders.filter(order => order.userId === userId));
+        }, 1000);
+    });
+};
+
+getUser()
+    .then((user) => {
+        return getOrders(user.id);
+    })
+    .then(orders => {
+        if(orders.length === 0) {
+            throw new Error('No orders found');
+        }
+
+        return orders[0].product;
+    })
+    .then(console.log);
