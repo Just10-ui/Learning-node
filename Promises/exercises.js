@@ -195,7 +195,8 @@ function login(email, password) {
 login('admin@gmail.com', 123456)
     .then(console.log)
     .catch(console.error);
-*/
+
+//* EXERCISE 15
 function getProduct(productId) {
     return new Promise(resolve => {
         setTimeout(() => {
@@ -212,3 +213,87 @@ getProduct(1)
     .then((product) => {
         console.log(`${product.name} - ${product.price}`);
     });
+
+//* EXERCISE 16
+const users = [
+    {
+        id: 1,
+        username: "Justin",
+        email: "justin@gmail.com"
+    },
+    {
+        id: 2,
+        username: "John",
+        email: "john@gmail.com"
+    }
+];
+
+const orders = [
+    {
+        orderId: "ORD001",
+        userId: 1,
+        product: "Laptop",
+        quantity: 1
+    },
+    {
+        orderId: "ORD002",
+        userId: 1,
+        product: "Mouse",
+        quantity: 2
+    },
+    {
+        orderId: "ORD003",
+        userId: 2,
+        product: "Mechanical Keyboard",
+        quantity: 1
+    }
+];
+
+const receipts = [
+    {
+        receiptId: "REC001",
+        orderId: "ORD001",
+        total: 50000,
+        paymentMethod: "GCash"
+    },
+    {
+        receiptId: "REC002",
+        orderId: "ORD002",
+        total: 3000,
+        paymentMethod: "Cash"
+    },
+    {
+        receiptId: "REC003",
+        orderId: "ORD003",
+        total: 4500,
+        paymentMethod: "Credit Card"
+    }
+];
+
+function getUser() {
+    return new Promise(resolve => {
+        resolve(users[0]);
+    });
+};
+
+function getOrders(userId) {
+    return new Promise(resolve => {
+        resolve(orders.filter(orders => orders.userId === userId));
+    });
+};
+
+function getReceipt(orderId) {
+    return new Promise(resolve => {
+        resolve(receipts.filter(receipt => receipt.orderId === orderId));
+    });
+};
+
+getUser()
+    .then((user) => {
+        return getOrders(user.id);
+    })
+    .then((orders) => {
+        return getReceipt(orders[0].orderId);
+    })
+    .then(console.log);
+*/
