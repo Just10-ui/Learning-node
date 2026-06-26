@@ -181,3 +181,17 @@ Promise.all([
 .catch(console.log);
 //Output "Failed"
 */
+//* EXERCISE 14
+function login(email, password) {
+    return new Promise((resolve, reject) => {
+        if (email === 'admin@gmail.com' && password === 123456) {
+            resolve('Login successful');
+        } else {
+            reject('Invalid credentials');
+        }
+    });
+};
+
+login('admin@gmail.com', 123456)
+    .then(console.log)
+    .catch(console.error);
