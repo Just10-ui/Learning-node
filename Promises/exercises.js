@@ -151,7 +151,7 @@ getUser()
         return orders[0].product;
     })
     .then(console.log);
-*/
+
 //* EXERCISE 12
 function getName() {
     return Promise.resolve('Justin');
@@ -171,3 +171,13 @@ Promise.all([
     getCountry()
 ])
     .then(console.log);
+
+//* EXERCISE 13
+Promise.all([
+    Promise.resolve("A"),
+    Promise.reject("Failed"),
+    Promise.resolve("C")
+])
+.catch(console.log);
+//Output "Failed"
+*/
