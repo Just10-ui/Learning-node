@@ -180,7 +180,7 @@ Promise.all([
 ])
 .catch(console.log);
 //Output "Failed"
-*/
+
 //* EXERCISE 14
 function login(email, password) {
     return new Promise((resolve, reject) => {
@@ -195,3 +195,20 @@ function login(email, password) {
 login('admin@gmail.com', 123456)
     .then(console.log)
     .catch(console.error);
+*/
+function getProduct(productId) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve({
+                id: 1,
+                name: "Laptop",
+                price: 50000
+            });
+        }, 2000)
+    });
+};
+
+getProduct(1)
+    .then((product) => {
+        console.log(`${product.name} - ${product.price}`);
+    });
