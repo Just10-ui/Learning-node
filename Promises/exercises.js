@@ -62,7 +62,7 @@ Promise.resolve(10)
         console.log(err.message);
     });
 //Output "Boom"
-*/
+
 //* EXERCISE 9
 function divide(a, b) {
     return new Promise((resolve, reject) => {
@@ -77,3 +77,22 @@ function divide(a, b) {
 divide(10, 2)
     .then(console.log)
     .catch(console.error);
+
+//* EXERCISE 10
+function getUser() {
+    const user = {
+        id: 1, 
+        user: 'Justin'
+    };
+
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(user);
+        }, 2000);
+    });
+};
+
+getUser()
+    .then(username => username.user)
+    .then(console.log);
+*/
