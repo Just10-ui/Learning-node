@@ -48,4 +48,32 @@ Promise.resolve(5)
     .then(num => num * 2)
     .then(console.log);
 //Output 20
+
+//* EXERCISE 7
+Promise.reject('Error occurred')
+    .catch(console.error);
+
+//* EXERCISE 8
+Promise.resolve(10)
+    .then(num => {
+        throw new Error("Boom");
+    })
+    .catch(err => {
+        console.log(err.message);
+    });
+//Output "Boom"
 */
+//* EXERCISE 9
+function divide(a, b) {
+    return new Promise((resolve, reject) => {
+        if (b !== 0) {
+            resolve(a / b);
+        } else {
+            reject('Cannot divide by zero');
+        };
+    });
+};
+
+divide(10, 2)
+    .then(console.log)
+    .catch(console.error);
