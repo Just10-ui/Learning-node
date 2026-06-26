@@ -95,7 +95,7 @@ function getUser() {
 getUser()
     .then(username => username.user)
     .then(console.log);
-*/
+
 //* EXERCISE 11
 function getUser() {
     const user = {
@@ -150,4 +150,24 @@ getUser()
 
         return orders[0].product;
     })
+    .then(console.log);
+*/
+//* EXERCISE 12
+function getName() {
+    return Promise.resolve('Justin');
+};
+
+function getAge() {
+    return Promise.resolve(22);
+};
+
+function getCountry() {
+    return Promise.resolve('Philippines');
+};
+
+Promise.all([
+    getName(),
+    getAge(),
+    getCountry()
+])
     .then(console.log);
