@@ -297,3 +297,17 @@ getUser()
     })
     .then(console.log);
 */
+
+function getUser(id) {
+    return new Promise((resolve, reject) => {
+        if (id > 0) {
+            resolve({id, name: 'User ' + id});
+        } else {
+            reject('Invalid User ID');
+        }
+    });
+};
+
+getUser(5)
+    .then(console.log)
+    .catch(console.error);
