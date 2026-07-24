@@ -300,11 +300,13 @@ getUser()
 
 function getUser(id) {
     return new Promise((resolve, reject) => {
-        if (id > 0) {
-            resolve({id, name: 'User ' + id});
-        } else {
-            reject('Invalid User ID');
-        }
+       setTimeout(() => {
+            if (id > 0) {
+                resolve({id, name: 'User ' + id});
+            } else {
+                reject('Invalid User ID');
+            }
+       }, 1000);
     });
 };
 
