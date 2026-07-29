@@ -1,4 +1,4 @@
-//* http.createServer()
+// http.createServer()
 
 const http = require('http');
 
