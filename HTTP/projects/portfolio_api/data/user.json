@@ -1,0 +1,14 @@
+{
+    "data": {
+        "name": "Justin Apolong",
+        "course": "BSIT",
+        "skills": ["HTML", "CSS", "JavaScript"]
+    },
+    "about": {
+        "about": "I am an aspiring backend developer"
+    },
+    "contact": {
+        "email": "apolongjustin@gmail.com",
+        "phone": "09154060072"
+    }
+}
