@@ -37,7 +37,7 @@ const server = http.createServer((req, res) => {
 
         return res.end(JSON.stringify({
             success: false,
-            message: "Router  not found"
+            message: "Router not found"
         }));
     };
 });
