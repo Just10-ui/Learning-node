@@ -26,14 +26,40 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
 
             const student = JSON.parse(body);
+            const newData = data.students;
+            const lastStudent = newData[newData.length - 1];
+            const { name, age } = student;
 
-            data.students.push(student);
+            if (data.students.length === 0) {
+                const newStudent = {
+                    'id': 1,
+                    name,
+                    age
+                };
+
+                data.students.push(newStudent);
+
+                return res.end(JSON.stringify({
+                    'success': true,
+                    'students': newStudent,
+                    newData
+                }));
+            }
+
+            const newStudent = {
+                'id': lastStudent.id + 1,
+                name,
+                age
+            };
+
+            data.students.push(newStudent);
 
             res.writeHead(201, JSON_HEADER);
 
             res.end(JSON.stringify({
                 'success': true,
-                'students': student
+                'students': newStudent,
+                newData
             }));
 
         });
