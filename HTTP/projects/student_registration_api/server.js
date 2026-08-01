@@ -6,21 +6,48 @@ const JSON_HEADER = {
 };
 
 const server = http.createServer((req, res) => {
+
     if (req.url === '/students' && req.method === 'GET') {
         res.writeHead(200, JSON_HEADER);
 
-        return res.end(JSON.parse({
+        return res.end(JSON.stringify({
             'success': true,
             'students': data.students
         }));
+
     } else if (req.url === '/students' && req.method === 'POST') {
 
+        let body = '';
+
+        req.on('data', chunk => {
+            body += chunk;
+        });
+
+        req.on('end', () => {
+
+            const student = JSON.parse(body);
+
+            data.students.push(student);
+
+            res.writeHead(201, JSON_HEADER);
+
+            res.end(JSON.stringify({
+                'success': true,
+                'students': student
+            }));
+
+        });
+
+        return;
+
     } else {
+
         res.writeHead(404, JSON_HEADER);
 
-        return res.end(JSON.parse({
+        return res.end(JSON.stringify({
             'error': 'Route not found'
         }));
+
     }
 });
 
