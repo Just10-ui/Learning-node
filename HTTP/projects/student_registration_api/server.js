@@ -1,5 +1,6 @@
 const http = require('http');
 const data = require('./data/student.json');
+const { object } = require('zod');
 const PORT = 8080;
 const JSON_HEADER = {
     'Content-Type': 'application/json'
@@ -28,6 +29,40 @@ const server = http.createServer((req, res) => {
             const student = JSON.parse(body);
             const newData = data.students;
             const lastStudent = newData[newData.length - 1];
+            const validKeys = Object.keys(student).every(key => key === 'name' || key === 'age');
+
+            if(!validKeys) {
+                res.writeHead(400, JSON_HEADER);
+
+                return res.end(JSON.stringify({
+                    'error': 'Only include name and age'
+                }));
+            }
+
+            if (!student.name && !student.age) {
+                res.writeHead(400, JSON_HEADER);
+
+                return res.end(JSON.stringify({
+                    'error': 'Please input name and age'
+                }));
+            }
+
+            if (!student.name) {
+                res.writeHead(400, JSON_HEADER);
+
+                return res.end(JSON.stringify({
+                    'error': 'Please include your name'
+                }));
+            }
+
+            if (!student.age) {
+                res.writeHead(400, JSON_HEADER);
+
+                return res.end(JSON.stringify({
+                    'error': 'Please include your age'
+                }));
+            }
+
             const { name, age } = student;
 
             if (data.students.length === 0) {

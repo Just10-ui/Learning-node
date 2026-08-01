@@ -1,3 +1,4 @@
-const obj = [];
+const obj = {
+};
 
-console.log(obj.length === 0);
+console.log(obj); 
