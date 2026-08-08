@@ -1,0 +1,2 @@
+// close()
+await handle.close();
