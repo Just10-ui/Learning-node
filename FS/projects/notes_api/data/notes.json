@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "title": "Learn Node",
+        "content": "Study the fs module"
+    },
+    {
+        "id": 2,
+        "title": "Practice",
+        "content": "Build an HTTP API"
+    }
+]
