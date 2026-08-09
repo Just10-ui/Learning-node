@@ -1,12 +1,22 @@
 [
-    {
-        "id": 1,
-        "title": "Learn Node",
-        "content": "Study the fs module"
-    },
-    {
-        "id": 2,
-        "title": "Practice",
-        "content": "Build an HTTP API"
-    }
+  {
+    "id": 1,
+    "title": "Learn Node",
+    "content": "Study the fs module"
+  },
+  {
+    "id": 3,
+    "title": "Practice",
+    "content": "Build a simple project"
+  },
+  {
+    "id": 4,
+    "title": "Practice",
+    "content": "Build a mini api"
+  },
+  {
+    "id": 5,
+    "title": "Practice",
+    "content": "Build an e-commerce system"
+  }
 ]
