@@ -1,1 +1,0 @@
-// readlink() - Reads symbolic links (mostly Linux)
