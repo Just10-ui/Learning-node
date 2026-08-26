@@ -1,0 +1,9 @@
+{
+    "product_id": 103,
+    "name": "Fishing Line",
+    "category": "fishing equipment",
+    "price": 250,
+    "stock": 30,
+    "vendor": "Pedro's Fishing Shop",
+    "status": "available"
+}

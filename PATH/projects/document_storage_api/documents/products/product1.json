@@ -1,0 +1,9 @@
+{
+    "product_id": 101,
+    "name": "Fishing Rod",
+    "category": "fishing equipment",
+    "price": 850,
+    "stock": 15,
+    "vendor": "Pedro's Fishing Shop",
+    "status": "available"
+}

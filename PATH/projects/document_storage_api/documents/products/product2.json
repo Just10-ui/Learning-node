@@ -1,0 +1,9 @@
+{
+    "product_id": 102,
+    "name": "Spinning Reel",
+    "category": "fishing equipment",
+    "price": 1200,
+    "stock": 8,
+    "vendor": "Pedro's Fishing Shop",
+    "status": "available"
+}
