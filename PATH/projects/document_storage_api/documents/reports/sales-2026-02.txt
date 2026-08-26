@@ -1,0 +1,9 @@
+Sales Report
+Month: February 2026
+
+Total Orders: 51
+Total Products Sold: 83
+Total Revenue: 72300
+
+Top Product: Spinning Reel
+Units Sold: 24

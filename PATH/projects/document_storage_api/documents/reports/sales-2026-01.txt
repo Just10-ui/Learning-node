@@ -1,0 +1,9 @@
+Sales Report
+Month: January 2026
+
+Total Orders: 42
+Total Products Sold: 67
+Total Revenue: 58450
+
+Top Product: Fishing Rod
+Units Sold: 18

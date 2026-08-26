@@ -1,0 +1,14 @@
+Inventory Report
+Date: August 2026
+
+Fishing Rod
+Stock: 15
+Status: Available
+
+Spinning Reel
+Stock: 8
+Status: Available
+
+Fishing Line
+Stock: 30
+Status: Available
