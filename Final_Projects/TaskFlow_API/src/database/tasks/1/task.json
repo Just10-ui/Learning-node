@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "id": 1,
+            "userId": 1,
+            "title": "create first task",
+            "description": "create a new task",
+            "priority": "medium",
+            "status": "on-going",
+            "createdAt": "11/4/2026",
+            "updatedAt": null
+        }
+    ]
+}
